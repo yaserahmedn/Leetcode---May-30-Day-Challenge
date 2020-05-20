@@ -33,13 +33,13 @@
 
 class Solution:
     def kthSmallest(self, root: TreeNode, k: int) -> int:
-        self.list=[]
+        self.array=[]
         
         def inorder(node):
             if (node):
                 inorder(node.left)
-                self.list.append(node.val)
+                self.array.append(node.val)
                 inorder(node.right)
                 
         inorder(root)
-        return self.list[k-1]
+        return self.array[k-1]
